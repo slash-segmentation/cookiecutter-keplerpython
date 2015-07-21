@@ -1,0 +1,17 @@
+Manifest-Version: 1.4.2
+KAR-Version: 2.1
+module-dependencies: kepler-2.4.0;outreach-2.3.0;r-2.4.0;loader-2.3.1;
+ display-redirect-1.0.0;actors-2.4.2;directors-2.1.0;opendap-2.1.0;dat
+ aturbine-2.3.0;ecogrid-2.4.0;authentication-gui-2.3.0;gui-2.4.1;modul
+ e-manager-gui-2.4.0;authentication-2.3.0;repository-2.4.0;job-2.2.2;i
+ o-2.0.0;ssh-2.2.0;data-handling-2.2.0;sms-2.2.0;component-library-2.3
+ .0;util-2.2.0;event-state-2.1.0;core-2.4.1;common-2.4.1;module-manage
+ r-2.4.0;configuration-manager-2.4.0;kepler-tasks-2.4.0;ptolemy-kepler
+ -2.4.1
+lsid: urn:lsid:kepler-project.org/ns/:70097:363:11
+
+Name: {{cookiecutter.repo_name}}.urn.lsid.kepler-project.org.ns..70097.362.157.xml
+type: org.kepler.moml.CompositeClassEntity
+lsid: urn:lsid:kepler-project.org/ns/:70097:362:157
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
