@@ -45,7 +45,7 @@ load test_helper
   # Check read me header
   run cat "$THE_TMP/$README_TXT"
   [ "$status" -eq 0 ]
-  [ "${lines[0]}" == "My Workflow" ]
+  [ "${lines[0]}" == "{{cookiecutter.project_name}}" ]
   [ "${lines[1]}" == "Job Name: jname" ]
   [ "${lines[2]}" == "User: joe" ]
   [ "${lines[3]}" == "Notify Email: " ]
