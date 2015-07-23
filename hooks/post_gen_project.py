@@ -8,7 +8,7 @@ import os
 from zipfile import ZipFile
 package_dir = '{{cookiecutter.repo_name}}'
 
-xmlfile = package_dir + '.urn.lsid.kepler-project.org.ns..70097.362.157.xml'
+xmlfile = package_dir + '.urn.lsid.kepler-project.org.ns..70097.362.547.xml'
 
 manifest = os.path.join('META-INF', 'MANIFEST.MF')
 
