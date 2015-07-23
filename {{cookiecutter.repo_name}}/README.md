@@ -1,3 +1,6 @@
+[1]: https://kepler-project.org/
+[2]: test/README.md
+
 {{cookiecutter.repo_name}}
 =======================
 
