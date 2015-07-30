@@ -43,6 +43,8 @@ The **workflow** will look like the one in the screenshot below and include a si
 Python Actor
 ============
 
+Currently within the **Python Actor** is the following code.  The **fire** method is invoked by [Kepler](https://kepler-project.org/).
+
 ```Python
 
 # This is a simple actor that copies the input to the output.
