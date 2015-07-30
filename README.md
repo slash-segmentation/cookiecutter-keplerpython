@@ -4,6 +4,7 @@
 [pythonactor]: https://kepler-project.org/developers/reference/python-and-kepler/?searchterm=token
 [zip]: https://en.wikipedia.org/wiki/Zip_(file_format)
 [jinja]: http://jinja.pocoo.org/
+[vi]: https://en.wikipedia.org/wiki/Vi
 
 cookiecutter-keplerpython
 ===========================
@@ -173,16 +174,79 @@ This template uses a feature of [Cookiecutter][cookiecutter] to invoke a script 
 
 #### Step 1 Creating Workflow to edit
 
+The **xml** file within **{{cookiecutter.repo_name}}/src** has {{ }} replacement tokens which prevent [Kepler][kepler] from loading the workflow.  To get a workflow that can be edited, simply run [Cookiecutter][cookiecutter] on this template to create a **kar** file.  Use the defaults [Cookiecutter][cookiecutter] when creating this repo since they will be needed in **Step 3** below.
 
-#### Step 2 Extracting xml from kar
+Once the source tree is created, changes can then be made to the **kar** file.  Be sure to save **kar.** 
 
-#### Step 3 Copying over xml file
+#### Step 2 Extracting xml from kar and copying to template source tree
 
-#### Step 4 Adjusting tokens in xml file
+Make a temp directory, copy **kar** file and rename suffix to **.zip** as seen with example **myworkflow.kar** below:
 
-#### Step 5 Updating MANIFEST.MF
+```Bash
 
-#### Step 6 Updating **hooks/post_gen_project.py**
+mkdir tmp
+cp myworkflow.kar tmp/myworkflow.zip
+cd tmp
+unzip myworkflow.zip
+cp myworkflow.urn.* ~/src/cookiecutter-keplerpython/\{\{cookiecutter.repo_name\}\}/src/{{cookiecutter.repo_name}}.urn.lsid.kepler-project.org.ns..70097.362.547.xml
 
-#### Step 7 Testing
+```
+
+#### Step 3 Adjusting tokens in xml file
+
+Using a text editor ([Vi][vi], emacs, etc..) replace the following:
+
+**Repo Name**
+
+```Bash
+
+myworkflow
+
+```
+with
+
+```Bash
+
+{{cookiecutter.repo_name}}
+
+```
+
+**Full Name**
+
+```Bash
+
+Christopher Churas
+
+```
+with
+
+```Bash
+
+{{cookiecutter.full_name}}
+
+```
+
+**Project Name**
+
+   NOTE: There are two places this will need to be replaced
+
+```Bash
+
+My Workflow
+
+```
+
+with
+
+```Bash
+
+{{cookiecutter.project_name}}
+
+```
+
+
+
+
+
+#### Step 4 Testing
 
