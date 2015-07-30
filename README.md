@@ -41,11 +41,11 @@ The above will create a new workflow source tree that looks like the following:
 
 * src/(repo name).kar
 
-** This is the actual [Kepler][kepler] workflow.  The file name is set to the value set for **repo_name** when running [cookiecutter][cookiecutter] to generate the source tree. 
+  * This is the actual [Kepler][kepler] workflow.  The file name is set to the value set for **repo_name** when running [cookiecutter][cookiecutter] to generate the source tree. 
 
 * test/
 
-** Contains bats unit test to run the [Kepler][kepler] workflow via the command line and verify correct operation.
+  * Contains bats unit test to run the [Kepler][kepler] workflow via the command line and verify correct operation.
 
 The **workflow** will look like the one in the screenshot below and include a single python actor redirected to a display actor
 
