@@ -115,12 +115,6 @@ The following parameters are set:
 From within the **fire** method and **Main** class these variables are accessible by this [Python][python] code:
 
 ```python
-foo = self.(parameter_name).stringValue()
-```
-
-**Example:**
-
-```python
 
 # gets value of cws_outputdir parameter 
 foo = self.cws_outputdir.stringValue()
