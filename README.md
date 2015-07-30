@@ -194,7 +194,7 @@ cp myworkflow.urn.* ~/src/cookiecutter-keplerpython/\{\{cookiecutter.repo_name\}
 
 #### Step 3 Adjusting tokens in xml file
 
-Using a text editor ([Vi][vi], emacs, etc..) replace the following:
+Using a text editor ([Vi][vi], emacs, etc..) replace the following in the xml file copied over in **Step 2**:
 
 **Repo Name**
 
@@ -228,7 +228,7 @@ with
 
 **Project Name**
 
-   NOTE: There are two places this will need to be replaced
+**NOTE:** There are two places this will need to be replaced
 
 ```Bash
 
@@ -244,9 +244,10 @@ with
 
 ```
 
-
-
-
+Save the **xml** file
 
 #### Step 4 Testing
 
+Try [Cookiecutter][cookiecutter] on the new template and then try to load the workflow via [Kepler][kepler].  
+
+If [Cookiecutter][cookiecutter] fails odds are there is text in the **xml** file that matches the token replacement signature used by [Jinja][jinga].  A workaround is to find the problem **{{** characters and escape them using this technique: http://jinja.pocoo.org/docs/dev/templates/#escaping
