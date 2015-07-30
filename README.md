@@ -2,6 +2,9 @@
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [python]: https://www.python.org/
 [pythonactor]: https://kepler-project.org/developers/reference/python-and-kepler/?searchterm=token
+[zip]: https://en.wikipedia.org/wiki/Zip_(file_format)
+[jinja]: http://jinja.pocoo.org/
+
 cookiecutter-keplerpython
 ===========================
 
@@ -147,3 +150,39 @@ if self.text.numberOfSources() > 0:
 self.output.broadcast(ptolemy.data.StringToken('hello'))
 
 ```
+
+# Developer Topic: Updating workflow in this template
+
+This section describes the best approach to updating the [Kepler][kepler] workflow in this template.  This is not straight forward since this template constructs the **kar** file on the fly due to limitations with [Cookiecutter][cookiecutter] and its internal template engine [Jingja][jinja] 
+
+### Structure of a [Kepler][kepler] workflow **kar** file
+
+[Kepler][kepler] 2.4+ workflows are stored in **.kar** files which are actually [Zip][zip] files with the following structure:
+
+```Bash
+
+ workflowname.urn.lsid.kepler-project.org.ns..#####.###.###.xml
+ META-INF/
+          MANIFEST.MF
+
+```
+
+### How this template works
+
+This template uses a feature of [Cookiecutter][cookiecutter] to invoke a script after initial token replacement and source tree creation.  The script is: **hooks/post_gen_project.py** which recreates the **kar** file from data stored in **{{cookiecutter.repo_name}}/src**
+
+#### Step 1 Creating Workflow to edit
+
+
+#### Step 2 Extracting xml from kar
+
+#### Step 3 Copying over xml file
+
+#### Step 4 Adjusting tokens in xml file
+
+#### Step 5 Updating MANIFEST.MF
+
+#### Step 6 Updating **hooks/post_gen_project.py**
+
+#### Step 7 Testing
+
