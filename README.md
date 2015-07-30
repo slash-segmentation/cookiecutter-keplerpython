@@ -1,3 +1,6 @@
+[kepler]: https://kepler-project.org/
+[cookiecutter]: https://github.com/audreyr/cookiecutter
+
 cookiecutter-keplerpython
 ===========================
 
@@ -20,13 +23,13 @@ cookiecutter https://github.com/slash-segmentation/cookiecutter-keplerpython
 Workflow
 ========
 
-The above will create a new directory containing the following:
+The above will create a new workflow source tree that looks like the following:
 
 ```Bash
 
   README.md
   src/
-      workflow.kar
+      (repo name).kar
   test/
        README.md
        successful_run.bats
@@ -36,6 +39,12 @@ The above will create a new directory containing the following:
         
 ```
 
+* src/(repo name).kar
+** This is the actual [Kepler](kepler) workflow.  The file name is set to the value set for **repo_name** when running [cookiecutter](cookiecutter) to generate the source tree. 
+
+* test/
+** Contains bats unit test to run the [Kepler](kepler) workflow via the command line and verify correct operation.
+
 The **workflow** will look like the one in the screenshot below and include a single python actor redirected to a display actor
 
 ![Workflow](images/pythonworkflow.png)
@@ -43,7 +52,7 @@ The **workflow** will look like the one in the screenshot below and include a si
 Python Actor
 ============
 
-Currently within the **Python Actor** is the following code.  The **fire** method is invoked by [Kepler](https://kepler-project.org/).
+Currently within the **Python Actor** is the following code.  The **fire** method is invoked by [Kepler](kepler).
 
 ```Python
 
