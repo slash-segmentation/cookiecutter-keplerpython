@@ -251,3 +251,7 @@ Save the **xml** file
 Try [Cookiecutter][cookiecutter] on the new template and then try to load the workflow via [Kepler][kepler].  
 
 If [Cookiecutter][cookiecutter] fails odds are there is text in the **xml** file that matches the token replacement signature used by [Jinja][jinga].  A workaround is to find the problem **{{** characters and escape them using this technique: http://jinja.pocoo.org/docs/dev/templates/#escaping
+
+#### Step 5 Fixing LSIDs
+
+[Kepler][kepler] gives each workflow and everything it touches a unique identifier (LSID).  This template lacks access to [Kepler][kepler] code to generate new LSIDs.  To get around it.  One should load [Kepler][kepler] and open the workflow generated from this template, then save the workflow with a new name, then save again with the old name. I know its weird, but it appears to work.
